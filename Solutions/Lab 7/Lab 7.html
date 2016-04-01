@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Models/Bank.js"></script>
+    <script src="Models/BankAccount.js"></script>
+    <script src="Models/SavingsAccount.js"></script>
+
+    <script>
+        var bank = new Bank();
+        bank.addAccount(1000);
+        bank.addAccount(500);
+        bank.addAccount(300, true)
+
+        bank.transferMoney(1, 2, 400);
+        console.log(bank.findAccount(1).getBalance())
+        console.log(bank.findAccount(2).getBalance())
+        try {
+            bank.transferMoney(3, 1, 500);
+        } catch (e) {
+            console.log(e.message);
+        }
+
+        console.log(bank.findAccount(3).getBalance())
+
+        console.log(bank.findAccount(1).getBalance())
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
